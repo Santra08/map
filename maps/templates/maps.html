@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MAP</title>
+	
+	<script src="https://unpkg.com/driver.js/dist/driver.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/driver.js/dist/driver.min.css" />
+
+<body style="background-color: rgb(17,17,75);">  
+    <div style="color:#fff; margin-left: 500px;font-size: 100px;">ROUTE MAP</div>
+                 <h5>                   
+                 </h5>
+        <form action="#" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div style="margin-left: -500px;padding-right: 600px; margin-top: 100px;">
+            <div style="background-color: black(17, 17, 75); margin-bottom: 20px;padding-bottom: 30px;margin-right: 700px;margin-left: 500px;">
+            <div class="row1" style="color:#fff; margin-left: 30px; margin-top: 0px;"><br>
+                <div style="margin-top: 10px; font-size: 20px;">
+                    Enter the starting city name: 
+                </div>
+            </div>
+<h5></h5>
+            <input type="text" required name="city_start" id="row" style=" height:25px;width: 320px; margin-left: 30px; margin-top: 10px;">
+               
+            <div class="row1" style="color:#fff; margin-left: 30px; margin-top: 0px;"><br>
+                <div style="margin-top: 10px; font-size: 20px;">
+                    Enter your destination city name: 
+                </div>
+            </div>
+            
+<h5></h5>
+            <input type="text" required name="city_end" id="row" style=" height:25px;width: 320px; margin-left: 30px; margin-top: 10px;">
+            <div class="row1" style="color:#fff; margin-left: 30px; margin-top: 0px;"><br>
+                <div style="margin-top: 10px; font-size: 20px;">
+                    Add new destination : 
+                </div>
+            </div>
+            
+<h5></h5>
+            <input type="text" name="city_between" id="row" style=" height:25px;width: 320px; margin-left: 30px; margin-top: 10px;">
+
+           
+            <!--<div class="row1" style="color:#fff; margin-left: 30px; margin-top: 0px;"><br>
+                <div style="margin-top: 10px; font-size: 20px;">
+                    Enter new destination: 
+                </div>
+            </div>
+<h5></h5>
+            <input type="text" required name="city_between" id="row" style=" height:25px;width: 320px; margin-left: 30px; margin-top: 10px;">-->
+
+                <div class="col-md-4" style="margin-left: 100px;">
+                    <button type="submit" id="validate2" name="singlebutton" class="btn" 
+                    style="background-color: white ;width: 100px;height: 41px;border-radius: 5px; margin-top: 30px;margin-left: -70px">
+                        <a link ><font color="#000">Submit</font></a>
+                        </button>
+    
+                    </div>        
+                </div> 
+                
+                </div>
+                <a href="{% url 'maps:download_data' %}" class="btn btn-primary" style="font-size: 20px; margin-left: 30px;color:red">Download your Data as pdf</a>
+
+               <div> <a href="{% url 'maps:download_data_csv' %}" style="font-size: 20px;margin-left:30px;color:red;">Download your Data as csv</a></div>
+
+            <div style="margin-left: 500px;padding-right: 465px; margin-top: -500px;">{{m|safe}}</div>
+           
+            
+           
+        
+</body>
+</head>
